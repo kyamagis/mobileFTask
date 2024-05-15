@@ -1,5 +1,6 @@
 #!bin/bash
 
+echo
 echo "OK"
 ./hastime 1 1 1
 ./hastime 01 0 09
@@ -18,5 +19,6 @@ echo "ERROR"
 ./hastime 1 2 3
 ./hastime 1 23 4
 
+echo
 
 

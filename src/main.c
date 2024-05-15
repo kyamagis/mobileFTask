@@ -70,24 +70,19 @@ int8_t  has_the_time_from_start_time_to_end_time(char **argv) {
     }
 
     if (end < start) {
-        fprintf(stderr, "\x1b[31mend is biger than start \n\x1b[39m");
+        fprintf(stderr, "\x1b[31mstart is biger than end \n\x1b[39m");
         return(EXIT_FAILURE);
     }
 
-    if (start == end) {
-        if (start == theTime) {
+    if (start <= theTime) {
+        if (start == theTime) { // case of the time == start == end 
             printf("\x1b[32mthe time is included from start to end \n\x1b[39m");
             return(EXIT_SUCCESS);
         }
-        else if (start != theTime) {
-            fprintf(stderr, "\x1b[31mthe time is out of from start to end \n\x1b[39m");
-            return(EXIT_FAILURE);
+        else if (theTime < end) {
+            printf("\x1b[32mthe time is included from start to end \n\x1b[39m");
+            return(EXIT_SUCCESS);
         }
-    }
-
-    if (start <= theTime && theTime < end) {
-        printf("\x1b[32mthe time is included from start to end \n\x1b[39m");
-        return(EXIT_SUCCESS);
     }
     fprintf(stderr, "\x1b[31mthe time is out of from start to end \n\x1b[39m");
     return(EXIT_FAILURE);
