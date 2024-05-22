@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -44,6 +45,7 @@ int8_t  is24hors(const char *timeStr, const char *timeName) {
     int timeNum = atoi(timeStr);
 
     if (timeNum < 0 || 23 < timeNum) {
+        fprintf(stderr, "error: %s is not 0 to 23 number\n", timeName);
         return(-1);
     }
 

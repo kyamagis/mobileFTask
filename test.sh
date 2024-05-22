@@ -18,6 +18,8 @@ echo "ERROR"
 ./hastime 1 "2" "-1"
 ./hastime 1 2 3
 ./hastime 1 23 4
+./hastime 2 02 24
+./hastime 100 02 24
 
 echo
 
